@@ -16,7 +16,9 @@ const container = document.getElementById("container");
 const searchText = document.getElementById("searchText");
 
 searchText.onchange = (event) => {
-  search(searchText.value);
+  if (searchText.value !== "") {
+    search(searchText.value);
+  }
 };
 
 function textTo(text) {

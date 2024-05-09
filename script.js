@@ -52,7 +52,7 @@ const addItem = (element) => {
   newItem.classList = "item";
 
   if (element.vote_average > 7) {
-    newItem.innerHTML = `<img id="img${itemNum}" src="https://image.tmdb.org/t/p/w300/${"1E5baAaEse26fej7uHcjOgEE2t2.jpg"}" alt="Filter!">
+    newItem.innerHTML = `<img id="img${itemNum}" src="https://image.tmdb.org/t/p/w300/${element.poster_path}" alt="Filter!">
     <div class="info">
         <div id="title${itemNum}" class="title">
             ${element.original_title}
@@ -65,7 +65,7 @@ const addItem = (element) => {
        ${element.overview}
     </div>`;
   } else {
-    newItem.innerHTML = `<img id="img${itemNum}" src="https://image.tmdb.org/t/p/w300/${"1E5baAaEse26fej7uHcjOgEE2t2.jpg"}" alt="Filter!">
+    newItem.innerHTML = `<img id="img${itemNum}" src="https://image.tmdb.org/t/p/w300/${element.poster_path}" alt="Filter!">
     <div class="info">
         <div id="title${itemNum}" class="title">
             ${element.original_title}
@@ -98,7 +98,7 @@ async function landingData() {
     addItem(element);
   });
 
-  // q(data.results);
+  q(data.results);
 }
 
 landingData();
